@@ -1,0 +1,184 @@
+---
+import '../styles/global.css';
+
+const services = [
+  {
+    name: 'Ask Me Anything',
+    price: '$50',
+    bestFor: 'Quick sleep questions and routine feedback',
+    features: ['30-45 minute virtual session', 'Nap, early waking, and regression support', 'Age-appropriate sleep expectations', 'Feedback on your current routine'],
+    cta: 'Ask a Sleep Question',
+    href: 'https://28ad5794-2a18-4683-980f-c7b09db83025.paylinks.godaddy.com/ask-me-anything',
+  },
+  {
+    name: 'Virtual Two-Week Sleep Consultation',
+    price: '$500',
+    bestFor: 'Families ready for a personalized sleep plan',
+    features: ['Custom sleep plan tailored to your child', 'Two weeks of unlimited text support', 'Daily progress updates', 'Three 30-minute coaching calls'],
+    cta: 'Book Virtual Consultation',
+    href: 'https://28ad5794-2a18-4683-980f-c7b09db83025.paylinks.godaddy.com/sleep-consultation',
+    featured: true,
+  },
+  {
+    name: 'In-Home Consultation',
+    price: '$900',
+    bestFor: 'Hands-on support and sleep space evaluation',
+    features: ['Personalized assessment', 'Sleep space evaluation', 'Real-time observation for first 3 nights', 'Follow-up support via text or call'],
+    cta: 'Book In-Home Support',
+    href: 'https://28ad5794-2a18-4683-980f-c7b09db83025.paylinks.godaddy.com/in-home-consult',
+  },
+];
+
+const faqs = [
+  ['What ages do you support?', 'I support families with infants and toddlers through common sleep challenges, routine changes, regressions, naps, early wakings, and bedtime struggles.'],
+  ['Is the plan personalized?', 'Yes. Every plan is tailored to your child, your goals, your parenting style, and your family routine.'],
+  ['Do you offer virtual support?', 'Yes. The two-week consultation and Ask Me Anything session are designed for virtual support.'],
+  ['Do you provide medical advice?', 'No. Sleep coaching is educational support and does not replace guidance from your pediatrician or medical provider.'],
+];
+
+const steps = ['Book the right support option', 'Share your child\'s current sleep routine and goals', 'Receive a personalized sleep plan', 'Implement the plan with compassionate support'];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Personalized baby and toddler sleep consulting with evidence-based, compassionate support. Virtual and in-home sleep plans for families seeking peaceful nights." />
+    <title>Calm and Courageous Sleepers | Baby & Toddler Sleep Consultant</title>
+  </head>
+  <body class="font-sans">
+    <header class="sticky top-0 z-50 border-b border-moss/10 bg-cream/90 backdrop-blur">
+      <nav class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+        <a href="#top" class="text-lg font-bold tracking-tight text-moss">Calm & Courageous Sleepers</a>
+        <div class="hidden items-center gap-6 text-sm font-medium text-ink/80 md:flex">
+          <a href="#services" class="hover:text-moss">Services</a>
+          <a href="#about" class="hover:text-moss">About</a>
+          <a href="#faq" class="hover:text-moss">FAQ</a>
+          <a href="mailto:divya@calmandcourageoussleepers.com" class="rounded-full bg-moss px-5 py-2 text-white shadow-soft hover:bg-ink">Contact</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="relative overflow-hidden px-6 py-20 md:py-28">
+        <div class="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top_left,#f2d8d5,transparent_34%),radial-gradient(circle_at_bottom_right,#dce9df,transparent_32%)]"></div>
+        <div class="mx-auto grid max-w-6xl items-center gap-12 md:grid-cols-[1.1fr_0.9fr]">
+          <div>
+            <p class="mb-4 inline-flex rounded-full bg-white/70 px-4 py-2 text-sm font-semibold text-moss shadow-sm">Because Little Ones Deserve Big Dreams.</p>
+            <h1 class="max-w-3xl text-4xl font-bold leading-tight tracking-tight text-ink md:text-6xl">Gentle, evidence-based sleep support for babies, toddlers, and exhausted parents.</h1>
+            <p class="mt-6 max-w-2xl text-lg leading-8 text-ink/75">Personalized sleep plans and compassionate coaching to help your child sleep better — without leaving you to figure it out alone.</p>
+            <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+              <a href="#services" class="rounded-full bg-moss px-7 py-3 text-center font-semibold text-white shadow-soft hover:bg-ink">View Sleep Packages</a>
+              <a href="mailto:divya@calmandcourageoussleepers.com?subject=Free%20Sleep%20Clarity%20Call" class="rounded-full border border-moss/25 bg-white px-7 py-3 text-center font-semibold text-moss hover:border-moss">Book a Free Discovery Call</a>
+            </div>
+          </div>
+          <div class="rounded-[2rem] bg-white/75 p-6 shadow-soft ring-1 ring-moss/10">
+            <div class="rounded-[1.5rem] bg-sage/15 p-8">
+              <p class="text-sm font-semibold uppercase tracking-[0.2em] text-moss">Sleep support for</p>
+              <ul class="mt-6 space-y-4 text-lg font-medium text-ink">
+                <li>Short naps and early wakings</li>
+                <li>Bedtime battles</li>
+                <li>Night wakings</li>
+                <li>Sleep regressions</li>
+                <li>Routine transitions</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="bg-white px-6 py-20">
+        <div class="mx-auto grid max-w-6xl gap-10 md:grid-cols-[0.8fr_1.2fr]">
+          <div>
+            <p class="font-semibold text-moss">About Divya</p>
+            <h2 class="mt-3 text-3xl font-bold tracking-tight md:text-4xl">Practical sleep guidance from a mom who understands real family life.</h2>
+          </div>
+          <div class="space-y-5 text-lg leading-8 text-ink/75">
+            <p>I’m an engineer and a proud mom of two, so I understand the importance of sleep — not just for children, but for parents too.</p>
+            <p>With a strong belief in the science behind sleep, I provide evidence-based guidance that helps both kids and families thrive. My goal is to empower you with practical, compassionate support so everyone can enjoy peaceful, restorative nights.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="services" class="px-6 py-20">
+        <div class="mx-auto max-w-6xl">
+          <div class="max-w-2xl">
+            <p class="font-semibold text-moss">Sleep Packages</p>
+            <h2 class="mt-3 text-3xl font-bold tracking-tight md:text-4xl">Choose the support that fits your family.</h2>
+          </div>
+          <div class="mt-10 grid gap-6 lg:grid-cols-3">
+            {services.map((service) => (
+              <article class:list={['rounded-[2rem] border bg-white p-8 shadow-sm', service.featured ? 'border-moss shadow-soft ring-2 ring-moss/10' : 'border-moss/10']}>
+                {service.featured && <p class="mb-4 inline-flex rounded-full bg-blush px-3 py-1 text-xs font-bold uppercase tracking-wide text-moss">Most popular</p>}
+                <h3 class="text-2xl font-bold text-ink">{service.name}</h3>
+                <p class="mt-2 text-3xl font-bold text-moss">{service.price}</p>
+                <p class="mt-3 font-medium text-ink/70">Best for: {service.bestFor}</p>
+                <ul class="mt-6 space-y-3 text-ink/75">
+                  {service.features.map((feature) => <li class="flex gap-3"><span class="text-moss">✓</span><span>{feature}</span></li>)}
+                </ul>
+                <a href={service.href} class="mt-8 block rounded-full bg-moss px-5 py-3 text-center font-semibold text-white hover:bg-ink">{service.cta}</a>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section class="bg-white px-6 py-20">
+        <div class="mx-auto max-w-6xl">
+          <p class="font-semibold text-moss">How It Works</p>
+          <h2 class="mt-3 text-3xl font-bold tracking-tight md:text-4xl">A clear path to calmer nights.</h2>
+          <div class="mt-10 grid gap-5 md:grid-cols-4">
+            {steps.map((step, index) => (
+              <div class="rounded-3xl bg-cream p-6">
+                <span class="flex h-11 w-11 items-center justify-center rounded-full bg-moss font-bold text-white">{index + 1}</span>
+                <p class="mt-5 font-semibold leading-7 text-ink">{step}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section class="px-6 py-20">
+        <div class="mx-auto max-w-6xl rounded-[2rem] bg-moss p-8 text-white shadow-soft md:p-12">
+          <p class="text-sm font-semibold uppercase tracking-[0.2em] text-white/70">Parent feedback</p>
+          <div class="mt-6 grid gap-6 md:grid-cols-2">
+            <blockquote class="rounded-3xl bg-white/10 p-6 leading-8">“Divya helped us understand what was realistic for our baby’s age and gave us a plan we could actually follow.”</blockquote>
+            <blockquote class="rounded-3xl bg-white/10 p-6 leading-8">“The support was compassionate, practical, and reassuring during a very exhausting season.”</blockquote>
+          </div>
+        </div>
+      </section>
+
+      <section id="faq" class="bg-white px-6 py-20">
+        <div class="mx-auto max-w-4xl">
+          <p class="font-semibold text-moss">FAQ</p>
+          <h2 class="mt-3 text-3xl font-bold tracking-tight md:text-4xl">Common questions from parents.</h2>
+          <div class="mt-8 divide-y divide-moss/10 rounded-[2rem] border border-moss/10 bg-cream px-6">
+            {faqs.map(([question, answer]) => (
+              <details class="group py-5">
+                <summary class="cursor-pointer list-none font-semibold text-ink group-open:text-moss">{question}</summary>
+                <p class="mt-3 leading-7 text-ink/70">{answer}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section class="px-6 py-20">
+        <div class="mx-auto max-w-4xl text-center">
+          <h2 class="text-3xl font-bold tracking-tight md:text-4xl">Ready for more peaceful nights?</h2>
+          <p class="mt-4 text-lg text-ink/70">Send a message to choose the right support option or book a package directly.</p>
+          <div class="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
+            <a href="mailto:divya@calmandcourageoussleepers.com" class="rounded-full bg-moss px-7 py-3 font-semibold text-white shadow-soft hover:bg-ink">Email Divya</a>
+            <a href="#services" class="rounded-full border border-moss/25 bg-white px-7 py-3 font-semibold text-moss hover:border-moss">View Packages</a>
+          </div>
+          <p class="mt-8 text-sm leading-6 text-ink/55">This service provides sleep education and coaching, not medical advice. Please consult your pediatrician for medical concerns, feeding issues, reflux, breathing concerns, or other health-related sleep disruptions.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="border-t border-moss/10 bg-white px-6 py-8 text-center text-sm text-ink/60">
+      <p>Copyright © 2025 Calm and Courageous Sleepers. All rights reserved.</p>
+    </footer>
+  </body>
+</html>
