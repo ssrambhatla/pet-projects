@@ -46,6 +46,8 @@ const steps = ['Book the right support option', 'Share your child\'s current sle
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Personalized baby and toddler sleep consulting with evidence-based, compassionate support. Virtual and in-home sleep plans for families seeking peaceful nights." />
     <title>Calm and Courageous Sleepers | Baby & Toddler Sleep Consultant</title>
+    <link rel="stylesheet" href="https://assets.calendly.com/assets/external/widget.css" />
+    <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
   </head>
   <body class="font-sans">
     <header class="sticky top-0 z-50 border-b border-moss/10 bg-cream/90 backdrop-blur">
@@ -70,7 +72,7 @@ const steps = ['Book the right support option', 'Share your child\'s current sle
             <p class="mt-6 max-w-2xl text-lg leading-8 text-ink/75">Personalized sleep plans and compassionate coaching to help your child sleep better — without leaving you to figure it out alone.</p>
             <div class="mt-8 flex flex-col gap-3 sm:flex-row">
               <a href="#services" class="rounded-full bg-moss px-7 py-3 text-center font-semibold text-white shadow-soft hover:bg-ink">View Sleep Packages</a>
-              <a href="mailto:divya@calmandcourageoussleepers.com?subject=Free%20Sleep%20Clarity%20Call" class="rounded-full border border-moss/25 bg-white px-7 py-3 text-center font-semibold text-moss hover:border-moss">Book a Free Discovery Call</a>
+              <button onclick="Calendly.initPopupWidget({url: 'https://calendly.com/divyaadibhatla'})" class="rounded-full border border-moss/25 bg-white px-7 py-3 text-center font-semibold text-moss hover:border-moss">Book a Free Discovery Call</button>
             </div>
           </div>
           <div class="rounded-[2rem] bg-white/75 p-6 shadow-soft ring-1 ring-moss/10">
@@ -151,6 +153,17 @@ const steps = ['Book the right support option', 'Share your child\'s current sle
         </div>
       </section>
 
+      <section id="schedule" class="bg-white px-6 py-20">
+        <div class="mx-auto max-w-4xl">
+          <div class="text-center">
+            <p class="font-semibold text-moss">Schedule a Call</p>
+            <h2 class="mt-3 text-3xl font-bold tracking-tight md:text-4xl">Book your free discovery call.</h2>
+            <p class="mt-4 text-lg text-ink/70">Not sure which package is right for your family? Schedule a free 15-minute call with Divya to talk through your sleep challenges and find the best path forward.</p>
+          </div>
+          <div class="calendly-inline-widget mt-10" data-url="https://calendly.com/divyaadibhatla" style="min-width:320px;height:630px;"></div>
+        </div>
+      </section>
+
       <section id="faq" class="bg-white px-6 py-20">
         <div class="mx-auto max-w-4xl">
           <p class="font-semibold text-moss">FAQ</p>
@@ -171,8 +184,8 @@ const steps = ['Book the right support option', 'Share your child\'s current sle
           <h2 class="text-3xl font-bold tracking-tight md:text-4xl">Ready for more peaceful nights?</h2>
           <p class="mt-4 text-lg text-ink/70">Send a message to choose the right support option or book a package directly.</p>
           <div class="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
-            <a href="mailto:divya@calmandcourageoussleepers.com" class="rounded-full bg-moss px-7 py-3 font-semibold text-white shadow-soft hover:bg-ink">Email Divya</a>
-            <a href="#services" class="rounded-full border border-moss/25 bg-white px-7 py-3 font-semibold text-moss hover:border-moss">View Packages</a>
+            <button onclick="Calendly.initPopupWidget({url: 'https://calendly.com/divyaadibhatla'})" class="rounded-full bg-moss px-7 py-3 font-semibold text-white shadow-soft hover:bg-ink">Book a Free Discovery Call</button>
+            <a href="mailto:divya@calmandcourageoussleepers.com" class="rounded-full border border-moss/25 bg-white px-7 py-3 font-semibold text-moss hover:border-moss">Email Divya</a>
           </div>
           <p class="mt-8 text-sm leading-6 text-ink/55">This service provides sleep education and coaching, not medical advice. Please consult your pediatrician for medical concerns, feeding issues, reflux, breathing concerns, or other health-related sleep disruptions.</p>
         </div>
