@@ -1,0 +1,257 @@
+---
+import '../styles/global.css';
+
+const experiences = [
+  {
+    role: 'Product Lead, Payments Optimization',
+    company: 'Western Union',
+    location: 'San Francisco, CA',
+    period: 'Dec 2021 – Present',
+    achievements: [
+      'Owned product strategy and roadmap for payment optimization and fraud mitigation across omnichannel payment flows processing billions in annual transaction volume.',
+      'Delivered 180+ basis point improvement in authorization rates and 25% YoY chargeback reduction through data-driven OKRs and ROI-prioritized features.',
+      'Drove card network tokenization initiatives with Visa, Mastercard, and Amex — increasing network token adoption by 40% and reducing fraud-related declines by 15%.',
+      'Led global processor integration with Nuvei across US, Canada, and Australia — enabling $150M+ in annual card transaction volume.',
+      'Built KPI dashboards using SQL, Splunk, and monitoring tools — adopted by 15+ stakeholders across product, fraud, operations, and finance.',
+    ],
+  },
+  {
+    role: 'Senior Software Engineer',
+    company: 'Western Union',
+    location: 'San Francisco, CA',
+    period: 'Apr 2016 – Dec 2021',
+    achievements: [
+      'Designed and launched an Intelligent Payment Router processing 5M+ daily transactions across 15+ currencies and 4 regions — reducing routing-related declines by 22%.',
+      'Built a configurable smart retry framework that recovered 22% of initially declined transactions, lifting overall approval rates by 130 basis points.',
+      'Collaborated cross-functionally to launch a dispute resolution API handling 10,000+ monthly chargebacks, reducing manual resolution time by 35%.',
+      'Integrated TIBCO BusinessWorks and BusinessEvents to orchestrate real-time payment workflows with compliance controls and high availability.',
+    ],
+  },
+  {
+    role: 'Integration Developer',
+    company: 'Cooper Vision',
+    location: 'Rochester, NY',
+    period: 'Jul 2015 – Apr 2016',
+    achievements: [
+      'Supported enterprise system migration to ERP platforms, improving integration reliability, data flows, and operational process continuity.',
+    ],
+  },
+  {
+    role: 'Payment Integration Engineer',
+    company: 'Western Union',
+    location: 'San Francisco, CA',
+    period: 'Feb 2013 – Jul 2015',
+    achievements: [
+      'Developed reusable EAI components for transaction processing, merchant onboarding, and payment settlement workflows.',
+      'Collaborated with QA to build simulation and testing tools for payment failure scenarios, edge cases, and processor timeouts.',
+    ],
+  },
+];
+
+const skills = {
+  'Product Management': ['Product Strategy & Roadmap', 'PRDs & Sequence Diagrams', 'OKRs', 'Feature Prioritization by ROI', 'Stakeholder Management', 'Cross-Functional Leadership'],
+  'Payments Optimization': ['Authorization Performance', 'Approval Rate Optimization', 'Intelligent Routing', 'Retry Strategy', 'Decline Analysis', 'A/B & Multivariate Testing'],
+  'Fraud & Security': ['3DS / Consumer Authentication', 'Tokenization & Vault Protocols', 'Network Tokens', 'Chargeback Management', 'PCI DSS', 'Risk-Adjusted Routing'],
+  'Payments Domain': ['Card Processing (Visa, MC, Amex)', 'ISO 8583', 'Apple Pay / Google Pay', 'Settlement & Reconciliation', 'Cross-Border Payments', 'Wallet Integrations'],
+  'Data & Tools': ['SQL', 'Snowflake', 'Splunk', 'Looker', 'Tableau', 'Python', 'REST APIs', 'KPI Dashboards'],
+};
+
+const projects = [
+  {
+    name: 'Calm and Courageous Sleepers',
+    description: 'Designed and developed a professional, responsive website for a baby and toddler sleep consulting business using Astro and Tailwind CSS. Integrated Calendly scheduling, GoDaddy Pay Links, and deployed on AWS Amplify with custom domain and SSL.',
+    tech: ['Astro', 'Tailwind CSS', 'TypeScript', 'AWS Amplify', 'GitHub'],
+    url: 'https://www.calmandcourageoussleepers.com',
+    tags: ['Web Development', 'CI/CD', 'SEO'],
+  },
+  {
+    name: 'Intelligent Payment Router',
+    description: 'Designed and launched a payment routing engine processing 5M+ daily transactions across 15+ currencies and 4 regions. Reduced routing-related declines by 22% and improved authorization performance through data-driven routing strategies.',
+    tech: ['Java', 'TIBCO', 'SQL', 'Splunk', 'REST APIs'],
+    tags: ['Payments', 'Routing', 'Scale'],
+  },
+  {
+    name: 'Smart Retry Framework',
+    description: 'Built a configurable retry framework that recovered 22% of initially declined transactions, lifting overall approval rates by 130 basis points. Implemented decline analysis, retry windows, and processor failover strategies.',
+    tech: ['Java', 'Python', 'SQL', 'Splunk'],
+    tags: ['Payments', 'Optimization', 'ROI'],
+  },
+  {
+    name: 'Transaction Monitoring Dashboard',
+    description: 'Led development of a real-time transaction monitoring and alerting platform — reduced mean time to detect authorization failures from hours to under 15 minutes. Adopted by 15+ stakeholders across product, fraud, and operations.',
+    tech: ['SQL', 'Splunk', 'Looker', 'REST APIs'],
+    tags: ['Observability', 'Analytics', 'Real-time'],
+  },
+];
+
+const keyAchievements = [
+  { metric: '180+ bps', label: 'Authorization rate improvement' },
+  { metric: '5M+', label: 'Daily transactions routed' },
+  { metric: '$150M+', label: 'Annual volume enabled' },
+  { metric: '22%', label: 'Declined transactions recovered' },
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Satish Rambhatla — Payments Engineer & Product Manager with 10+ years in payment optimization, routing, and platform strategy. Processing billions in annual transaction volume." />
+    <meta name="keywords" content="payments, product manager, payment optimization, authorization rates, routing, tokenization, 3DS, settlement, reconciliation" />
+    <meta property="og:title" content="Satish Rambhatla — Payments Engineer & Product Manager" />
+    <meta property="og:description" content="10+ years in payment optimization, routing, and platform strategy. Processing billions in annual transaction volume." />
+    <meta property="og:type" content="website" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <title>Satish Rambhatla — Payments Engineer & Product Manager</title>
+  </head>
+  <body class="font-sans">
+    <header class="sticky top-0 z-50 border-b border-slate/60 bg-white/90 backdrop-blur">
+      <nav class="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
+        <a href="#top" class="text-base font-bold tracking-tight text-ink">Satish Rambhatla</a>
+        <div class="hidden items-center gap-6 text-sm font-medium text-slate-dark md:flex">
+          <a href="#about" class="hover:text-accent">About</a>
+          <a href="#skills" class="hover:text-accent">Skills</a>
+          <a href="#experience" class="hover:text-accent">Experience</a>
+          <a href="#projects" class="hover:text-accent">Projects</a>
+          <a href="#contact" class="rounded-full bg-accent px-5 py-2 text-white hover:bg-accent-dark">Contact</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="relative overflow-hidden px-6 py-20 md:py-28">
+        <div class="absolute inset-0 -z-10 bg-gradient-to-b from-accent-light/50 to-white"></div>
+        <div class="mx-auto max-w-5xl">
+          <p class="mb-4 text-sm font-semibold uppercase tracking-[0.2em] text-accent">Payments Engineer & Product Manager</p>
+          <h1 class="max-w-3xl text-4xl font-bold leading-tight tracking-tight text-ink md:text-6xl">Building payment systems that move billions.</h1>
+          <p class="mt-6 max-w-2xl text-lg leading-8 text-slate-dark">10+ years in payment optimization, intelligent routing, tokenization, and fraud mitigation — processing billions of dollars in annual transaction volume across 4 regions and 15+ currencies.</p>
+          <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+            <a href="#projects" class="rounded-full bg-accent px-7 py-3 text-center font-semibold text-white shadow-sm hover:bg-accent-dark">View Projects</a>
+            <a href="#contact" class="rounded-full border border-slate bg-white px-7 py-3 text-center font-semibold text-ink hover:border-accent hover:text-accent">Get in Touch</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="metrics" class="border-y border-slate/60 bg-slate-light/50 px-6 py-12">
+        <div class="mx-auto grid max-w-5xl gap-8 sm:grid-cols-2 md:grid-cols-4">
+          {keyAchievements.map((item) => (
+            <div class="text-center">
+              <p class="text-3xl font-bold text-accent md:text-4xl">{item.metric}</p>
+              <p class="mt-2 text-sm font-medium text-slate-dark">{item.label}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section id="about" class="px-6 py-20">
+        <div class="mx-auto max-w-5xl">
+          <p class="font-semibold text-accent">About</p>
+          <h2 class="mt-3 text-3xl font-bold tracking-tight md:text-4xl">Payments product leader who bridges engineering and business.</h2>
+          <div class="mt-6 max-w-3xl space-y-4 text-lg leading-8 text-slate-dark">
+            <p>I'm a payments product and optimization leader with 10+ years of experience across card, wallet, and bank-transfer payment flows processing billions of dollars in annual transaction volume.</p>
+            <p>I define roadmaps, author PRDs, prioritize features by ROI, and set OKRs tied to approval rate, conversion, and fraud outcomes. My expertise spans payment routing, retries, tokenization, 3DS/consumer authentication, decline analysis, settlement, reconciliation, and issuer/PSP performance.</p>
+            <p>I'm a data-driven partner to fraud, risk, compliance, engineering, and commercial teams — using SQL, Splunk, dashboards, and transaction monitoring to improve payment performance end-to-end.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="skills" class="bg-slate-light/50 px-6 py-20">
+        <div class="mx-auto max-w-5xl">
+          <p class="font-semibold text-accent">Skills & Expertise</p>
+          <h2 class="mt-3 text-3xl font-bold tracking-tight md:text-4xl">Deep domain expertise in payments.</h2>
+          <div class="mt-10 grid gap-8 md:grid-cols-2">
+            {Object.entries(skills).map(([category, items]) => (
+              <div class="rounded-2xl border border-slate/60 bg-white p-6">
+                <h3 class="text-lg font-bold text-ink">{category}</h3>
+                <div class="mt-4 flex flex-wrap gap-2">
+                  {items.map((item) => (
+                    <span class="rounded-full bg-accent-light px-3 py-1.5 text-sm font-medium text-accent-dark">{item}</span>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="experience" class="px-6 py-20">
+        <div class="mx-auto max-w-5xl">
+          <p class="font-semibold text-accent">Experience</p>
+          <h2 class="mt-3 text-3xl font-bold tracking-tight md:text-4xl">10+ years in payments.</h2>
+          <div class="mt-10 space-y-8">
+            {experiences.map((exp) => (
+              <article class="rounded-2xl border border-slate/60 bg-white p-6 shadow-sm md:p-8">
+                <div class="flex flex-col gap-1 md:flex-row md:items-center md:justify-between">
+                  <div>
+                    <h3 class="text-xl font-bold text-ink">{exp.role}</h3>
+                    <p class="text-base font-medium text-accent-dark">{exp.company} · {exp.location}</p>
+                  </div>
+                  <p class="text-sm font-medium text-slate-dark">{exp.period}</p>
+                </div>
+                <ul class="mt-5 space-y-3 text-base leading-7 text-slate-dark">
+                  {exp.achievements.map((achievement) => (
+                    <li class="flex gap-3">
+                      <span class="mt-1 text-accent">▸</span>
+                      <span>{achievement}</span>
+                    </li>
+                  ))}
+                </ul>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="projects" class="bg-slate-light/50 px-6 py-20">
+        <div class="mx-auto max-w-5xl">
+          <p class="font-semibold text-accent">Projects</p>
+          <h2 class="mt-3 text-3xl font-bold tracking-tight md:text-4xl">Selected work.</h2>
+          <div class="mt-10 grid gap-6 md:grid-cols-2">
+            {projects.map((project) => (
+              <article class="rounded-2xl border border-slate/60 bg-white p-6 shadow-sm transition hover:shadow-md md:p-8">
+                <h3 class="text-xl font-bold text-ink">{project.name}</h3>
+                <p class="mt-3 text-base leading-7 text-slate-dark">{project.description}</p>
+                <div class="mt-4 flex flex-wrap gap-2">
+                  {project.tags.map((tag) => (
+                    <span class="rounded-full bg-slate-light px-3 py-1 text-xs font-semibold text-slate-dark">{tag}</span>
+                  ))}
+                </div>
+                <div class="mt-4 flex flex-wrap gap-2">
+                  {project.tech.map((tech) => (
+                    <span class="rounded-full bg-accent-light px-3 py-1 text-xs font-medium text-accent-dark">{tech}</span>
+                  ))}
+                </div>
+                {project.url && (
+                  <a href={project.url} target="_blank" rel="noopener noreferrer" class="mt-6 inline-flex items-center gap-1 text-sm font-semibold text-accent hover:text-accent-dark">
+                    View Project →
+                  </a>
+                )}
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="px-6 py-20">
+        <div class="mx-auto max-w-3xl text-center">
+          <p class="font-semibold text-accent">Contact</p>
+          <h2 class="mt-3 text-3xl font-bold tracking-tight md:text-4xl">Let's connect.</h2>
+          <p class="mt-4 text-lg text-slate-dark">Open to payments product management and engineering leadership roles. Reach out via email or LinkedIn.</p>
+          <div class="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
+            <a href="mailto:ss.rambhatla@gmail.com" class="rounded-full bg-accent px-7 py-3 font-semibold text-white shadow-sm hover:bg-accent-dark">Email Me</a>
+            <a href="https://www.linkedin.com/in/satish-rambhatla-68a59375" target="_blank" rel="noopener noreferrer" class="rounded-full border border-slate bg-white px-7 py-3 font-semibold text-ink hover:border-accent hover:text-accent">LinkedIn</a>
+            <a href="https://github.com/ssrambhatla" target="_blank" rel="noopener noreferrer" class="rounded-full border border-slate bg-white px-7 py-3 font-semibold text-ink hover:border-accent hover:text-accent">GitHub</a>
+          </div>
+          <p class="mt-8 text-sm text-slate-dark">San Francisco, CA · (860) 534-0801 · ss.rambhatla@gmail.com</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="border-t border-slate/60 bg-white px-6 py-8 text-center text-sm text-slate-dark">
+      <p>© 2025 Satish Rambhatla. All rights reserved.</p>
+    </footer>
+  </body>
+</html>
