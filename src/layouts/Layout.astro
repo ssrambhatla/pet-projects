@@ -1,0 +1,65 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+  canonical?: string;
+}
+
+const {
+  title = 'Calm & Courageous Sleepers | Private Pediatric Sleep Concierge — Bay Area',
+  description = 'Private, data-driven pediatric sleep concierge serving Atherton, Palo Alto, Marin County, and San Francisco. Bespoke in-home sleep residency, virtual sleep architecture, and overnight immersion for discerning families.',
+  canonical = 'https://calmandcourageoussleepers.com',
+} = Astro.props;
+
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Calm and Courageous Sleepers',
+  description: 'Private pediatric sleep concierge serving the San Francisco Bay Area. Data-driven sleep architecture, bespoke in-home sleep residency, and overnight immersion for discerning families.',
+  provider: {
+    '@type': 'Individual',
+    name: 'Divya Adi',
+    url: 'https://calmandcourageoussleepers.com',
+  },
+  areaServed: ['Atherton, CA', 'Palo Alto, CA', 'Marin County, CA', 'San Francisco, CA', 'Hillsborough, CA', 'Menlo Park, CA', 'Los Altos Hills, CA', 'Tiburon, CA', 'Mill Valley, CA'],
+  serviceType: 'Pediatric Sleep Consulting',
+  offers: {
+    '@type': 'AggregateOffer',
+    priceRange: '$1,500 – $5,000+',
+  },
+};
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <title>{title}</title>
+
+    <!-- Open Graph -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:site_name" content="Calm & Courageous Sleepers" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Calendly -->
+    <link rel="stylesheet" href="https://assets.calendly.com/assets/external/widget.css" />
+    <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+
+    <!-- Structured Data -->
+    <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+  </head>
+  <body class="font-sans antialiased">
+    <slot />
+  </body>
+</html>

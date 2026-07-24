@@ -1,0 +1,104 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const title = 'Concierge Baby Sleep Specialist Atherton CA | Calm & Courageous Sleepers';
+const description = 'Private concierge baby sleep specialist serving Atherton, CA. Bespoke in-home overnight sleep residency, data-driven sleep architecture, and nursery environment engineering for discerning Atherton families.';
+const canonical = 'https://calmandcourageoussleepers.com/concierge-baby-sleep-specialist-atherton-ca';
+---
+
+<Layout title={title} description={description} canonical={canonical}>
+  <header class="sticky top-0 z-50 border-b border-moss/10 bg-cream/95 backdrop-blur-md">
+    <nav class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+      <a href="/" class="font-serif text-xl font-semibold tracking-tight text-moss">Calm & Courageous Sleepers</a>
+      <div class="hidden items-center gap-8 text-sm font-medium text-ink/80 md:flex">
+        <a href="/#services" class="hover:text-gold transition-colors">Concierge Services</a>
+        <a href="/#about" class="hover:text-gold transition-colors">About Divya</a>
+        <a href="/#faq" class="hover:text-gold transition-colors">FAQ</a>
+        <a href="/#consultation" class="rounded-full bg-moss px-6 py-2.5 text-white shadow-luxury hover:bg-ink transition-colors">Request a Private Consultation</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="relative overflow-hidden px-6 py-24 md:py-32">
+      <div class="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top_left,#e8d5d0,transparent_30%),radial-gradient(circle_at_bottom_right,#dce9df,transparent_28%)]"></div>
+      <div class="mx-auto max-w-4xl text-center">
+        <p class="mb-6 inline-flex items-center gap-2 rounded-full bg-white/80 px-5 py-2.5 text-sm font-medium text-moss shadow-luxury">
+          <span class="h-2 w-2 rounded-full bg-gold"></span>
+          Serving Atherton · Menlo Park · Woodside
+        </p>
+        <h1 class="font-serif text-4xl font-semibold leading-[1.1] tracking-tight text-ink md:text-6xl">
+          Concierge Baby Sleep Specialist in Atherton, CA
+        </h1>
+        <p class="mt-8 text-lg leading-8 text-ink/70">
+          Elite private sleep concierge for Atherton families. The Bespoke In-Home Sleep Residency brings complete overnight immersion to your estate — Divya personally handles overnight execution, environment design, and biometric tracking so your household can finally rest.
+        </p>
+        <div class="mt-10 flex flex-col justify-center gap-4 sm:flex-row">
+          <a href="/#consultation" class="rounded-full bg-moss px-8 py-4 text-center font-semibold text-white shadow-luxury hover:bg-ink transition-colors">Apply for Concierge Care</a>
+          <a href="/#services" class="rounded-full border border-moss/30 bg-white/80 px-8 py-4 text-center font-semibold text-moss hover:border-moss transition-colors">View Concierge Services</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-white px-6 py-24">
+      <div class="mx-auto max-w-4xl space-y-6 text-lg leading-8 text-ink/70">
+        <h2 class="font-serif text-3xl font-semibold text-ink md:text-4xl">Atherton's Standard for Pediatric Sleep Excellence</h2>
+        <p>
+          Atherton families expect the highest standard of service in every aspect of their lives. Pediatric sleep should be no different. As an engineer-turned-sleep-specialist, I bring a data-driven, systematic approach that treats your child's sleep as a precision-optimizable system.
+        </p>
+        <p>
+          The Bespoke In-Home Sleep Residency is designed for families who want total delegation. I come to your home, engineer the sleep environment, personally handle overnight execution for the first 3 nights, and coordinate with your nanny or household staff for seamless continuity. You sleep. I handle the rest.
+        </p>
+        <div class="mt-8 grid gap-4 sm:grid-cols-2">
+          <div class="rounded-2xl bg-cream p-6 ring-1 ring-moss/10">
+            <h3 class="font-serif text-xl font-semibold text-moss">Complete Overnight Delegation</h3>
+            <p class="mt-2 text-sm text-ink/60">Divya personally handles overnight execution for the first 3 nights — environment design, biometric tracking, and real-time adjustments.</p>
+          </div>
+          <div class="rounded-2xl bg-cream p-6 ring-1 ring-moss/10">
+            <h3 class="font-serif text-xl font-semibold text-moss">Estate Nursery Engineering</h3>
+            <p class="mt-2 text-sm text-ink/60">Comprehensive sleep environment optimization — lighting, temperature, acoustics, and air quality calibrated for your nursery.</p>
+          </div>
+          <div class="rounded-2xl bg-cream p-6 ring-1 ring-moss/10">
+            <h3 class="font-serif text-xl font-semibold text-moss">Household Staff Integration</h3>
+            <p class="mt-2 text-sm text-ink/60">Full training and handoff protocols for nannies, au pairs, and night nurses to ensure consistent execution across all caregivers.</p>
+          </div>
+          <div class="rounded-2xl bg-cream p-6 ring-1 ring-moss/10">
+            <h3 class="font-serif text-xl font-semibold text-moss">Privacy-First Engagement</h3>
+            <p class="mt-2 text-sm text-ink/60">Confidential, discreet service designed for high-profile families who value complete privacy.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="px-6 py-20">
+      <div class="mx-auto max-w-4xl text-center">
+        <h2 class="font-serif text-2xl font-semibold tracking-tight text-ink md:text-3xl">Serving Atherton's Premier Neighborhoods</h2>
+        <div class="mt-8 flex flex-wrap justify-center gap-3">
+          {['West Atherton', 'Lindenwood', 'Fair Oaks', 'Menlo Oaks', 'Atherton Oaks', 'Ashfield Park', 'Selby Lane'].map((area) => (
+            <span class="rounded-full border border-moss/20 bg-white px-5 py-2 text-sm font-medium text-ink/70 shadow-luxury">{area}</span>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-white px-6 py-24">
+      <div class="mx-auto max-w-4xl text-center">
+        <h2 class="font-serif text-3xl font-semibold tracking-tight text-ink md:text-4xl">Ready to reclaim your nights?</h2>
+        <p class="mt-5 text-lg text-ink/70">Begin with a private consultation. Divya will personally assess your family's needs and recommend the right path to restorative sleep.</p>
+        <a href="/#consultation" class="mt-8 inline-block rounded-full bg-moss px-8 py-4 font-semibold text-white shadow-luxury hover:bg-ink transition-colors">Apply for Concierge Care</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-moss/10 bg-white px-6 py-10">
+    <div class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 text-sm text-ink/50 md:flex-row">
+      <p>Copyright © 2025 Calm and Courageous Sleepers. All rights reserved.</p>
+      <div class="flex gap-6">
+        <a href="/in-home-pediatric-sleep-consultant-palo-alto" class="hover:text-moss transition-colors">Palo Alto</a>
+        <a href="/concierge-baby-sleep-specialist-atherton-ca" class="hover:text-moss transition-colors">Atherton</a>
+        <a href="/private-newborn-sleep-training-marin-county" class="hover:text-moss transition-colors">Marin County</a>
+        <a href="/luxury-in-home-overnight-sleep-coach-san-francisco" class="hover:text-moss transition-colors">San Francisco</a>
+      </div>
+    </div>
+  </footer>
+</Layout>

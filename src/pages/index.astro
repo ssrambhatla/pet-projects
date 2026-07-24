@@ -1,199 +1,355 @@
 ---
-import '../styles/global.css';
+import Layout from '../layouts/Layout.astro';
 
 const services = [
   {
-    name: 'Ask Me Anything',
-    price: '$50',
-    bestFor: 'Quick sleep questions and routine feedback',
-    features: ['30-45 minute virtual session', 'Nap, early waking, and regression support', 'Age-appropriate sleep expectations', 'Feedback on your current routine'],
-    cta: 'Ask a Sleep Question',
-    href: 'https://28ad5794-2a18-4683-980f-c7b09db83025.paylinks.godaddy.com/ask-me-anything',
+    name: 'Virtual Sleep Concierge Program',
+    price: '$575',
+    tagline: 'Data-driven remote sleep optimization',
+    bestFor: 'Families seeking a precision-engineered sleep plan with expert remote guidance',
+    features: [
+      'Comprehensive sleep audit with biometric-informed baseline assessment',
+      'Custom sleep architecture plan tailored to your child\'s developmental stage',
+      'Two weeks of unlimited secure messaging support',
+      'Weekly data review sessions with progress analytics',
+      'Three 30-minute private coaching consultations',
+      'Nursery environment optimization guide (light, temperature, acoustics)',
+    ],
+    cta: 'Book Your Consultation',
+    href: 'https://calendly.com/divyaadibhatla',
+    payHref: '/payment?virtual',  // Pay Now for $575 Virtual program
   },
   {
-    name: 'Virtual Two-Week Sleep Consultation',
-    price: '$500',
-    bestFor: 'Families ready for a personalized sleep plan',
-    features: ['Custom sleep plan tailored to your child', 'Two weeks of unlimited text support', 'Daily progress updates', 'Three 30-minute coaching calls'],
-    cta: 'Book Virtual Consultation',
-    href: 'https://28ad5794-2a18-4683-980f-c7b09db83025.paylinks.godaddy.com/sleep-consultation',
+    name: 'The Bespoke In-Home Sleep Residency',
+    price: '$2975+',
+    tagline: 'Complete elite overnight immersion',
+    bestFor: 'Discerning families who want total delegation — Divya personally handles overnight execution',
+    features: [
+      'Complete in-home overnight immersion for the first 3 nights',
+      'Divya personally handles overnight execution, environment design, and biometric tracking',
+      'Real-time sleep environment engineering (lighting, temperature, acoustics, air quality)',
+      'Personalized sleep architecture plan with developmental milestones mapping',
+      'Two weeks of follow-up secure messaging and progress analytics',
+      'Post-residency report with sleep efficiency metrics and optimization recommendations',
+      'Coordination with your nanny, au pair, or household staff for seamless handoff',
+    ],
+    cta: 'Schedule Your Residency',
+    href: 'https://calendly.com/divyaadibhatla',
     featured: true,
+    payHref: null,  // No direct pay button for variable-price residency
   },
   {
-    name: 'In-Home Consultation',
-    price: '$900',
-    bestFor: 'Hands-on support and sleep space evaluation',
-    features: ['Personalized assessment', 'Sleep space evaluation', 'Real-time observation for first 3 nights', 'Follow-up support via text or call'],
-    cta: 'Book In-Home Support',
-    href: 'https://28ad5794-2a18-4683-980f-c7b09db83025.paylinks.godaddy.com/in-home-consult',
+    name: 'Private Ask Me Anything Session',
+    price: '$150',
+    tagline: 'One-time expert consultation',
+    bestFor: 'Parents who need targeted answers and a clear action plan from a specialist — without committing to a full engagement',
+    features: [
+      '45-minute private one-on-one call (virtual)',
+      'Bring your questions — get expert answers in real time',
+      'Sleep history review and environment assessment',
+      'Preliminary sleep architecture recommendations',
+      'Written action plan with prioritized next steps',
+    ],
+    cta: 'Book Now',
+    href: '/book',
+    payHref: '/payment',
   },
 ];
 
 const faqs = [
-  ['What ages do you support?', 'I support families with infants and toddlers through common sleep challenges, routine changes, regressions, naps, early wakings, and bedtime struggles.'],
-  ['Is the plan personalized?', 'Yes. Every plan is tailored to your child, your goals, your parenting style, and your family routine.'],
-  ['Do you offer virtual support?', 'Yes. The two-week consultation and Ask Me Anything session are designed for virtual support.'],
-  ['Do you provide medical advice?', 'No. Sleep coaching is educational support and does not replace guidance from your pediatrician or medical provider.'],
+  ['What ages do you support?', 'I support families with infants and toddlers through every stage of sleep development — from newborn sleep shaping through toddler sleep transitions, regressions, and routine optimization.'],
+  ['How is your approach different from traditional sleep coaching?', 'My background in engineering informs a data-driven, systematic approach I call Sleep Architecture. Rather than vague coaching, I analyze your child\'s sleep patterns, environment variables, and developmental stage to build a precision-optimized sleep framework. Every recommendation is evidence-based and tracked against measurable outcomes.'],
+  ['Do you coordinate with our household staff (nanny, au pair, night nurse)?', 'Yes. A key part of the Bespoke In-Home Sleep Residency includes training and coordinating with your existing household staff to ensure seamless execution and consistency across all caregivers.'],
+  ['What areas do you serve for in-home support?', 'I provide in-home concierge service throughout the San Francisco Bay Area, including Atherton, Menlo Park, Palo Alto, Los Altos Hills, Hillsborough, Tiburon, Mill Valley, and Pacific Heights. Virtual consultations are available nationwide.'],
+  ['Do you provide medical advice?', 'No. Sleep coaching is educational support and does not replace guidance from your pediatrician or medical provider. However, my approach is informed by clinical sleep science and I collaborate well alongside medical teams for children with reflux, special needs, or other medical considerations.'],
+  ['How do we begin?', 'Every engagement begins with a private consultation to understand your family\'s unique needs, household dynamics, and sleep goals. This allows me to recommend the right tier of service and ensure we are the right fit before any commitment.'],
 ];
 
-const steps = ['Book the right support option', 'Share your child\'s current sleep routine and goals', 'Receive a personalized sleep plan', 'Implement the plan with compassionate support'];
+const steps = [
+  { title: 'Request a Private Consultation', desc: 'Complete a confidential intake so I understand your household\'s unique needs and goals.' },
+  { title: 'Personalized Assessment', desc: 'I conduct a comprehensive review of your child\'s sleep history, environment, and developmental stage.' },
+  { title: 'Custom Sleep Architecture', desc: 'Receive a precision-engineered sleep plan with measurable milestones and environment optimization.' },
+  { title: 'Execution & Delegation', desc: 'Implement the plan with expert guidance — or let me handle overnight execution personally through the Bespoke Residency.' },
+];
+
+const serviceAreas = ['Atherton', 'Menlo Park', 'Palo Alto', 'Los Altos Hills', 'Hillsborough', 'Tiburon', 'Mill Valley', 'Pacific Heights', 'San Francisco', 'Marin County'];
 ---
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Personalized baby and toddler sleep consulting with evidence-based, compassionate support. Virtual and in-home sleep plans for families seeking peaceful nights." />
-    <title>Calm and Courageous Sleepers | Baby & Toddler Sleep Consultant</title>
-    <link rel="stylesheet" href="https://assets.calendly.com/assets/external/widget.css" />
-    <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
-  </head>
-  <body class="font-sans">
-    <header class="sticky top-0 z-50 border-b border-moss/10 bg-cream/90 backdrop-blur">
-      <nav class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-        <a href="#top" class="text-lg font-bold tracking-tight text-moss">Calm & Courageous Sleepers</a>
-        <div class="hidden items-center gap-6 text-sm font-medium text-ink/80 md:flex">
-          <a href="#services" class="hover:text-moss">Services</a>
-          <a href="#about" class="hover:text-moss">About</a>
-          <a href="#faq" class="hover:text-moss">FAQ</a>
-          <a href="mailto:divya@calmandcourageoussleepers.com" class="rounded-full bg-moss px-5 py-2 text-white shadow-soft hover:bg-ink">Contact</a>
-        </div>
-      </nav>
-    </header>
+<Layout>
+  <header class="sticky top-0 z-50 border-b border-moss/10 bg-cream/95 backdrop-blur-md">
+    <nav class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+      <a href="#top" class="flex items-center gap-2">
+        <span class="font-serif text-xl font-semibold tracking-tight text-moss">Calm & Courageous Sleepers</span>
+      </a>
+      <div class="hidden items-center gap-8 text-sm font-medium text-ink/80 md:flex">
+        <a href="#services" class="hover:text-gold transition-colors">Concierge Services</a>
+        <a href="#about" class="hover:text-gold transition-colors">About Divya</a>
+        <a href="#faq" class="hover:text-gold transition-colors">FAQ</a>
+        <a href="#consultation" class="rounded-full bg-moss px-6 py-2.5 text-white shadow-luxury hover:bg-ink transition-colors">Request a Private Consultation</a>
+      </div>
+    </nav>
+  </header>
 
-    <main id="top">
-      <section class="relative overflow-hidden px-6 py-20 md:py-28">
-        <div class="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top_left,#f2d8d5,transparent_34%),radial-gradient(circle_at_bottom_right,#dce9df,transparent_32%)]"></div>
-        <div class="mx-auto grid max-w-6xl items-center gap-12 md:grid-cols-[1.1fr_0.9fr]">
-          <div>
-            <p class="mb-4 inline-flex rounded-full bg-white/70 px-4 py-2 text-sm font-semibold text-moss shadow-sm">Because Little Ones Deserve Big Dreams.</p>
-            <h1 class="max-w-3xl text-4xl font-bold leading-tight tracking-tight text-ink md:text-6xl">Gentle, evidence-based sleep support for babies, toddlers, and exhausted parents.</h1>
-            <p class="mt-6 max-w-2xl text-lg leading-8 text-ink/75">Personalized sleep plans and compassionate coaching to help your child sleep better — without leaving you to figure it out alone.</p>
-            <div class="mt-8 flex flex-col gap-3 sm:flex-row">
-              <a href="#services" class="rounded-full bg-moss px-7 py-3 text-center font-semibold text-white shadow-soft hover:bg-ink">View Sleep Packages</a>
-              <button onclick="Calendly.initPopupWidget({url: 'https://calendly.com/divyaadibhatla'})" class="rounded-full border border-moss/25 bg-white px-7 py-3 text-center font-semibold text-moss hover:border-moss">Book a Free Discovery Call</button>
+  <main id="top">
+    <section class="relative overflow-hidden px-6 py-24 md:py-36">
+      <div class="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top_left,#e8d5d0,transparent_30%),radial-gradient(circle_at_bottom_right,#dce9df,transparent_28%)]"></div>
+      <div class="mx-auto grid max-w-6xl items-start gap-16 md:grid-cols-[1.15fr_0.85fr]">
+        <div>
+          <p class="mb-6 inline-flex items-center gap-2 rounded-full bg-white/80 px-5 py-2.5 text-sm font-medium text-moss shadow-luxury">
+            <span class="h-2 w-2 rounded-full bg-gold"></span>
+            Private Pediatric Sleep Concierge — San Francisco Bay Area
+          </p>
+          <h1 class="max-w-3xl font-serif text-4xl font-semibold leading-[1.1] tracking-tight text-ink md:text-6xl">
+            Data-Driven Sleep Architecture for Discerning Families
+          </h1>
+          <p class="mt-8 max-w-2xl text-lg leading-8 text-ink/70">
+            Complete elite overnight immersion where Divya personally handles the overnight execution, environment design, and biometric tracking — so you can finally sleep. Engineered for families who value precision, privacy, and total delegation.
+          </p>
+          <div class="mt-10 flex flex-col gap-4 sm:flex-row">
+            <a href="#consultation" class="rounded-full bg-moss px-8 py-4 text-center font-semibold text-white shadow-luxury hover:bg-ink transition-colors">Apply for Concierge Care</a>
+            <a href="#services" class="rounded-full border border-moss/30 bg-white/80 px-8 py-4 text-center font-semibold text-moss hover:border-moss transition-colors">View Concierge Services</a>
+          </div>
+          <div class="mt-12 flex flex-wrap items-center gap-x-8 gap-y-3 text-sm text-ink/50">
+            <span class="flex items-center gap-2"><span class="text-gold">✦</span> Serving Atherton to Marin County</span>
+            <span class="flex items-center gap-2"><span class="text-gold">✦</span> Privacy-first engagement</span>
+            <span class="flex items-center gap-2"><span class="text-gold">✦</span> Science-backed methodology</span>
+          </div>
+        </div>
+        <div class="rounded-[2rem] bg-white/80 p-8 shadow-luxury ring-1 ring-moss/10">
+          <div class="rounded-[1.5rem] bg-sage/10 p-8">
+            <p class="text-xs font-semibold uppercase tracking-[0.25em] text-moss">Precision Solutions for Complex Sleep Challenges</p>
+            <ul class="mt-6 space-y-4 text-base font-medium text-ink">
+              <li class="flex items-center gap-3"><span class="h-1.5 w-1.5 rounded-full bg-gold"></span>Newborn sleep shaping & night wakings</li>
+              <li class="flex items-center gap-3"><span class="h-1.5 w-1.5 rounded-full bg-gold"></span>Sleep regressions & developmental transitions</li>
+              <li class="flex items-center gap-3"><span class="h-1.5 w-1.5 rounded-full bg-gold"></span>Reflux & special needs sleep optimization</li>
+              <li class="flex items-center gap-3"><span class="h-1.5 w-1.5 rounded-full bg-gold"></span>Nursery environment engineering</li>
+              <li class="flex items-center gap-3"><span class="h-1.5 w-1.5 rounded-full bg-gold"></span>Nanny & household staff coordination</li>
+              <li class="flex items-center gap-3"><span class="h-1.5 w-1.5 rounded-full bg-gold"></span>Executive parent schedule alignment</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Divya -->
+    <section id="about" class="px-6 py-24">
+      <div class="mx-auto grid max-w-6xl gap-16 md:grid-cols-[1.3fr_0.7fr]">
+        <div class="space-y-6 text-lg leading-8 text-ink/70">
+          <p class="text-sm font-semibold uppercase tracking-[0.2em] text-gold">About Divya</p>
+          <h2 class="font-serif text-3xl font-semibold tracking-tight text-ink md:text-5xl">An Engineer's Approach to Pediatric Sleep</h2>
+          <p>
+            I'm an engineer and a proud mother of two. That combination is not incidental — it's the foundation of my methodology. When I struggled with my own children's sleep, I didn't turn to vague coaching advice. I turned to data, developmental science, and systems thinking.
+          </p>
+          <p>
+            The result is what I call <strong class="text-moss">Sleep Architecture</strong>: a data-driven, algorithmic framework that treats pediatric sleep as an optimizable system. Every child's sleep is influenced by dozens of interconnected variables — circadian biology, feeding patterns, environmental conditions, developmental milestones, and household routines. I analyze each variable, identify the bottlenecks, and engineer a precision plan that produces measurable results.
+          </p>
+          <p>
+            For Bay Area families who think in systems, who value evidence over anecdotes, and who want total delegation rather than another item on their plate — this is sleep consulting reimagined.
+          </p>
+          <div class="mt-8 grid grid-cols-2 gap-6 sm:grid-cols-3">
+            <div class="rounded-2xl bg-cream p-5 ring-1 ring-moss/10">
+              <p class="font-serif text-2xl font-semibold text-moss">10+ yrs</p>
+              <p class="mt-1 text-sm text-ink/50">Engineering background</p>
+            </div>
+            <div class="rounded-2xl bg-cream p-5 ring-1 ring-moss/10">
+              <p class="font-serif text-2xl font-semibold text-moss">100%</p>
+              <p class="mt-1 text-sm text-ink/50">Evidence-based methods</p>
+            </div>
+            <div class="rounded-2xl bg-cream p-5 ring-1 ring-moss/10">
+              <p class="font-serif text-2xl font-semibold text-moss">Bay Area</p>
+              <p class="mt-1 text-sm text-ink/50">In-home concierge</p>
             </div>
           </div>
-          <div class="rounded-[2rem] bg-white/75 p-6 shadow-soft ring-1 ring-moss/10">
-            <div class="rounded-[1.5rem] bg-sage/15 p-8">
-              <p class="text-sm font-semibold uppercase tracking-[0.2em] text-moss">Sleep support for</p>
-              <ul class="mt-6 space-y-4 text-lg font-medium text-ink">
-                <li>Short naps and early wakings</li>
-                <li>Bedtime battles</li>
-                <li>Night wakings</li>
-                <li>Sleep regressions</li>
-                <li>Routine transitions</li>
+        </div>
+        <div>
+          <img src="/Divya_Prof.jpeg" alt="Divya Adi — Pediatric Sleep Concierge & Sleep Architecture Specialist" class="mx-auto rounded-[2rem] shadow-luxury ring-1 ring-moss/10 md:mx-0" width="360" height="360" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Concierge Services -->
+    <section id="services" class="bg-white px-6 py-24">
+      <div class="mx-auto max-w-6xl">
+        <div class="max-w-2xl">
+          <p class="text-sm font-semibold uppercase tracking-[0.2em] text-gold">Concierge Services</p>
+          <h2 class="mt-4 font-serif text-2xl font-semibold tracking-tight text-ink md:text-3xl">Three tiers of engagement. One standard of excellence.</h2>
+        </div>
+        <div class="mt-12 grid gap-6 lg:grid-cols-3">
+          {services.map((service) => (
+            <article class:list={['flex flex-col rounded-[2rem] border bg-white p-8 shadow-luxury', service.featured ? 'border-gold ring-2 ring-gold/20' : 'border-moss/10']}>
+              {service.featured && <p class="mb-4 inline-flex w-fit rounded-full bg-gold/15 px-3 py-1 text-xs font-bold uppercase tracking-wide text-gold">Signature Service</p>}
+              <h3 class="font-serif text-2xl font-semibold text-ink">{service.name}</h3>
+              <p class="mt-1 text-sm font-medium text-ink/50">{service.tagline}</p>
+              <p class="mt-4 font-serif text-3xl font-semibold text-moss">{service.price}</p>
+              <p class="mt-3 text-sm leading-6 text-ink/60">{service.bestFor}</p>
+              <ul class="mt-6 space-y-3 text-sm text-ink/75">
+                {service.features.map((feature) => <li class="flex gap-3"><span class="mt-0.5 text-gold">✦</span><span>{feature}</span></li>)}
               </ul>
+              <div class="mt-8 flex flex-col gap-3">
+                <a href={service.href} class="block rounded-full bg-moss px-5 py-3 text-center font-semibold text-white hover:bg-ink transition-colors">{service.cta}</a>
+                {service.payHref && <a href={service.payHref} class="block rounded-full border border-moss/30 px-5 py-3 text-center font-semibold text-moss hover:border-moss hover:bg-cream transition-colors">Pay {service.price} Now</a>}
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="px-6 py-24">
+      <div class="mx-auto max-w-6xl">
+        <p class="text-sm font-semibold uppercase tracking-[0.2em] text-gold">The Engagement</p>
+        <h2 class="mt-4 font-serif text-3xl font-semibold tracking-tight text-ink md:text-5xl">A structured path to restorative sleep.</h2>
+        <div class="mt-12 grid gap-6 md:grid-cols-4">
+          {steps.map((step, index) => (
+            <div class="rounded-3xl bg-cream p-7 ring-1 ring-moss/10">
+              <span class="flex h-12 w-12 items-center justify-center rounded-full bg-moss font-serif text-lg font-semibold text-white">{index + 1}</span>
+              <p class="mt-5 font-semibold leading-7 text-ink">{step.title}</p>
+              <p class="mt-2 text-sm leading-6 text-ink/60">{step.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="bg-white px-6 py-24">
+      <div class="mx-auto max-w-6xl">
+        <p class="text-sm font-semibold uppercase tracking-[0.2em] text-gold">Client Experiences</p>
+        <h2 class="mt-4 font-serif text-3xl font-semibold tracking-tight text-ink md:text-5xl">Trusted by discerning parents.</h2>
+        <div class="mt-10 overflow-hidden rounded-[2rem] bg-cream p-3 ring-1 ring-moss/10">
+          <img src="/hero-divya.jpeg" alt="Divya Adi with a client family" class="h-[240px] w-full rounded-[1.7rem] object-cover md:h-[360px]" />
+        </div>
+        <div class="mt-8 grid gap-6 md:grid-cols-2">
+          <blockquote class="rounded-3xl bg-cream p-8 leading-8 text-ink/80 ring-1 ring-moss/10">
+            "I cannot recommend Divya enough, especially for parents who feel overwhelmed or skeptical about sleep training. As a parent of a child with special needs, I knew how important sleep hygiene was, but I was struggling to manage nights on my own while my daughter dealt with reflux. Divya's approach is unique because she focuses on training the parents. She gave us the tools to change our own habits — like proper burping techniques and ensuring our daughter didn't fall asleep mid-feed — which were the keys to her success. She was incredibly patient, suggesting we wait until the 14-16 week mark to ensure she was developmentally ready. We went slowly and gently, and the result has been life-changing: our daughter has been sleeping through the night (10–12 hours!) since she was four months old."
+            <footer class="mt-4 text-sm font-semibold text-moss">— Mother of 10-week-old, special needs & reflux</footer>
+          </blockquote>
+          <blockquote class="rounded-3xl bg-cream p-8 leading-8 text-ink/80 ring-1 ring-moss/10">
+            From day 1 Divya listened to all my goals and really took into consideration my low tolerance for crying. I was able to text her and she responded with reassurance and made me feel very confident moving forward. We spoke on the phone and texted as I needed and that was all we needed to get our baby sleeping!! I would highly recommend!!
+            <footer class="mt-4 text-sm font-semibold text-moss">— Mother of 5-month-old</footer>
+          </blockquote>
+          <blockquote class="rounded-3xl bg-cream p-8 leading-8 text-ink/80 ring-1 ring-moss/10">
+            "Divya helped us understand what was realistic for our baby's age and gave us a plan we could actually follow. The support was compassionate, practical, and reassuring during a very exhausting season."
+            <footer class="mt-4 text-sm font-semibold text-moss">— Bay Area parent</footer>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- Private Consultation / Intake Form -->
+    <section id="consultation" class="px-6 py-24">
+      <div class="mx-auto max-w-4xl">
+        <div class="text-center">
+          <p class="text-sm font-semibold uppercase tracking-[0.2em] text-gold">Private Consultation</p>
+          <h2 class="mt-4 font-serif text-3xl font-semibold tracking-tight text-ink md:text-5xl">Request a Private Consultation</h2>
+          <p class="mt-5 text-lg leading-8 text-ink/70">
+            Every engagement begins with a confidential consultation. Share a few details about your household and sleep goals, and Divya will personally respond to discuss whether concierge care is the right fit for your family.
+          </p>
+        </div>
+        <form class="mt-12 space-y-6 rounded-[2rem] bg-white p-8 shadow-luxury ring-1 ring-moss/10 md:p-12">
+          <div class="grid gap-6 md:grid-cols-2">
+            <div>
+              <label for="name" class="block text-sm font-semibold text-ink">Parent Name</label>
+              <input type="text" id="name" name="name" required class="mt-2 w-full rounded-xl border border-moss/20 bg-cream px-4 py-3 text-ink placeholder-ink/40 focus:border-moss focus:outline-none focus:ring-2 focus:ring-moss/20" placeholder="Your full name" />
+            </div>
+            <div>
+              <label for="email" class="block text-sm font-semibold text-ink">Email</label>
+              <input type="email" id="email" name="email" required class="mt-2 w-full rounded-xl border border-moss/20 bg-cream px-4 py-3 text-ink placeholder-ink/40 focus:border-moss focus:outline-none focus:ring-2 focus:ring-moss/20" placeholder="you@example.com" />
             </div>
           </div>
-        </div>
-      </section>
-
-      <section id="about" class="bg-white px-6 py-20">
-        <div class="mx-auto grid max-w-6xl gap-10 md:grid-cols-[1.2fr_0.8fr]">
-          <div class="space-y-5 text-lg leading-8 text-ink/75">
-            <p class="font-semibold text-moss">About Divya</p>
-            <p>I'm an engineer and a proud mom of two, so I understand the importance of sleep — not just for children, but for parents too.</p>
-            <p>With a strong belief in the science behind sleep, I provide evidence-based guidance that helps both kids and families thrive. My goal is to empower you with practical, compassionate support so everyone can enjoy peaceful, restorative nights.</p>
+          <div class="grid gap-6 md:grid-cols-2">
+            <div>
+              <label for="phone" class="block text-sm font-semibold text-ink">Phone</label>
+              <input type="tel" id="phone" name="phone" class="mt-2 w-full rounded-xl border border-moss/20 bg-cream px-4 py-3 text-ink placeholder-ink/40 focus:border-moss focus:outline-none focus:ring-2 focus:ring-moss/20" placeholder="(650) 555-0100" />
+            </div>
+            <div>
+              <label for="location" class="block text-sm font-semibold text-ink">Location / Neighborhood</label>
+              <input type="text" id="location" name="location" class="mt-2 w-full rounded-xl border border-moss/20 bg-cream px-4 py-3 text-ink placeholder-ink/40 focus:border-moss focus:outline-none focus:ring-2 focus:ring-moss/20" placeholder="Atherton, Palo Alto, Marin County..." />
+            </div>
+          </div>
+          <div class="grid gap-6 md:grid-cols-2">
+            <div>
+              <label for="child-age" class="block text-sm font-semibold text-ink">Child's Age</label>
+              <input type="text" id="child-age" name="child-age" class="mt-2 w-full rounded-xl border border-moss/20 bg-cream px-4 py-3 text-ink placeholder-ink/40 focus:border-moss focus:outline-none focus:ring-2 focus:ring-moss/20" placeholder="e.g., 4 months" />
+            </div>
+            <div>
+              <label for="service" class="block text-sm font-semibold text-ink">Service of Interest</label>
+              <select id="service" name="service" class="mt-2 w-full rounded-xl border border-moss/20 bg-cream px-4 py-3 text-ink focus:border-moss focus:outline-none focus:ring-2 focus:ring-moss/20">
+                <option value="">Select a service...</option>
+                <option value="bespoke">The Bespoke In-Home Sleep Residency ($3,500–$5,000+)</option>
+                <option value="virtual">Virtual Sleep Architecture ($1,500)</option>
+                <option value="executive">Private Ask Me Anything Session ($750)</option>
+                <option value="unsure">Not sure yet — need guidance</option>
+              </select>
+            </div>
           </div>
           <div>
-            <img src="/Divya_Prof.jpeg" alt="Divya — Baby and Toddler Sleep Consultant" class="mx-auto rounded-[2rem] shadow-soft ring-1 ring-moss/10 md:mx-0" width="320" height="320" />
+            <label for="goals" class="block text-sm font-semibold text-ink">What are your primary goals for your household's productivity and restoration?</label>
+            <textarea id="goals" name="goals" rows="4" class="mt-2 w-full rounded-xl border border-moss/20 bg-cream px-4 py-3 text-ink placeholder-ink/40 focus:border-moss focus:outline-none focus:ring-2 focus:ring-moss/20" placeholder="Share your sleep challenges, household dynamics, and what success looks like for your family..."></textarea>
           </div>
-        </div>
-      </section>
+          <div class="flex items-center gap-3">
+            <input type="checkbox" id="privacy" name="privacy" required class="h-4 w-4 rounded border-moss/30 text-moss focus:ring-moss/20" />
+            <label for="privacy" class="text-sm text-ink/60">I understand this is a private consultation and my information will be kept confidential.</label>
+          </div>
+          <button type="submit" class="w-full rounded-full bg-moss px-8 py-4 font-semibold text-white shadow-luxury hover:bg-ink transition-colors">Submit Confidential Request</button>
+          <p class="text-center text-sm text-ink/50">Divya personally reviews every request and responds within 48 hours.</p>
+        </form>
+      </div>
+    </section>
 
-      <section id="services" class="px-6 py-20">
-        <div class="mx-auto max-w-6xl">
-          <div class="max-w-2xl">
-            <p class="font-semibold text-moss">Sleep Packages</p>
-            <h2 class="mt-3 text-3xl font-bold tracking-tight md:text-4xl">Choose the support that fits your family.</h2>
-          </div>
-          <div class="mt-10 grid gap-6 lg:grid-cols-3">
-            {services.map((service) => (
-              <article class:list={['rounded-[2rem] border bg-white p-8 shadow-sm', service.featured ? 'border-moss shadow-soft ring-2 ring-moss/10' : 'border-moss/10']}>
-                {service.featured && <p class="mb-4 inline-flex rounded-full bg-blush px-3 py-1 text-xs font-bold uppercase tracking-wide text-moss">Most popular</p>}
-                <h3 class="text-2xl font-bold text-ink">{service.name}</h3>
-                <p class="mt-2 text-3xl font-bold text-moss">{service.price}</p>
-                <p class="mt-3 font-medium text-ink/70">Best for: {service.bestFor}</p>
-                <ul class="mt-6 space-y-3 text-ink/75">
-                  {service.features.map((feature) => <li class="flex gap-3"><span class="text-moss">✓</span><span>{feature}</span></li>)}
-                </ul>
-                <a href={service.href} class="mt-8 block rounded-full bg-moss px-5 py-3 text-center font-semibold text-white hover:bg-ink">{service.cta}</a>
-              </article>
-            ))}
-          </div>
+    <!-- FAQ -->
+    <section id="faq" class="bg-white px-6 py-24">
+      <div class="mx-auto max-w-4xl">
+        <p class="text-sm font-semibold uppercase tracking-[0.2em] text-gold">FAQ</p>
+        <h2 class="mt-4 font-serif text-3xl font-semibold tracking-tight text-ink md:text-5xl">Questions from discerning parents.</h2>
+        <div class="mt-10 divide-y divide-moss/10 rounded-[2rem] border border-moss/10 bg-cream px-8">
+          {faqs.map(([question, answer]) => (
+            <details class="group py-6">
+              <summary class="cursor-pointer list-none font-semibold text-ink group-open:text-moss">{question}</summary>
+              <p class="mt-3 leading-7 text-ink/70">{answer}</p>
+            </details>
+          ))}
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section class="bg-white px-6 py-20">
-        <div class="mx-auto max-w-6xl">
-          <p class="font-semibold text-moss">How It Works</p>
-          <h2 class="mt-3 text-3xl font-bold tracking-tight md:text-4xl">A clear path to calmer nights.</h2>
-          <div class="mt-10 grid gap-5 md:grid-cols-4">
-            {steps.map((step, index) => (
-              <div class="rounded-3xl bg-cream p-6">
-                <span class="flex h-11 w-11 items-center justify-center rounded-full bg-moss font-bold text-white">{index + 1}</span>
-                <p class="mt-5 font-semibold leading-7 text-ink">{step}</p>
-              </div>
-            ))}
-          </div>
+    <!-- Service Area / SEO -->
+    <section class="px-6 py-20">
+      <div class="mx-auto max-w-6xl text-center">
+        <h2 class="font-serif text-2xl font-semibold tracking-tight text-ink md:text-3xl">Serving the Bay Area's Most Discerning Communities</h2>
+        <div class="mt-8 flex flex-wrap justify-center gap-3">
+          {serviceAreas.map((area) => (
+            <span class="rounded-full border border-moss/20 bg-white px-5 py-2 text-sm font-medium text-ink/70 shadow-luxury">{area}</span>
+          ))}
         </div>
-      </section>
+        <p class="mt-8 text-sm leading-6 text-ink/50">Virtual consultations available nationwide. In-home concierge service available throughout the San Francisco Bay Area.</p>
+      </div>
+    </section>
 
-      <section class="px-6 py-20">
-        <div class="mx-auto max-w-6xl rounded-[2rem] bg-moss p-8 text-white shadow-soft md:p-12">
-          <p class="text-sm font-semibold uppercase tracking-[0.2em] text-white/70">Parent feedback</p>
-          <div class="mt-6 grid gap-6 md:grid-cols-2">
-            <blockquote class="rounded-3xl bg-white/10 p-6 leading-8">From day 1 Divya listened to all my goals and really took into consideration my low tolerance for crying. I was able to text her and she responded with reassurance and made me feel very confident moving forward. I live in Iowa and it did not matter — we spoke on the phone and texted as I needed and that was all we needed to get our baby sleeping!! I would highly recommend!!<footer class="mt-4 text-sm font-semibold text-white/70">— Mom of 5-month-old</footer></blockquote>
-            <blockquote class="rounded-3xl bg-white/10 p-6 leading-8">I cannot recommend Divya enough, especially for parents who feel overwhelmed or skeptical about sleep training. As a parent of a child with special needs, I knew how important sleep hygiene was, but I was struggling to manage nights on my own while my daughter dealt with reflux. Divya's approach is unique because she focuses on training the parents. She gave us the tools to change our own habits — like proper burping techniques and ensuring our daughter didn't fall asleep mid-feed — which were the keys to her success. She was incredibly patient, suggesting we wait until the 14-16 week mark to ensure she was developmentally ready. We went slowly and gently, and the result has been life-changing: our daughter has been sleeping through the night (10–12 hours!) since she was four months old. Divya is compassionate, attuned, and provides just the right amount of gentle firm guidance to get results.<footer class="mt-4 text-sm font-semibold text-white/70">— Mom of 10-week-old</footer></blockquote>
-            <blockquote class="rounded-3xl bg-white/10 p-6 leading-8">"Divya helped us understand what was realistic for our baby's age and gave us a plan we could actually follow."</blockquote>
-            <blockquote class="rounded-3xl bg-white/10 p-6 leading-8">"The support was compassionate, practical, and reassuring during a very exhausting season."</blockquote>
-          </div>
+    <!-- Final CTA -->
+    <section class="px-6 py-24">
+      <div class="mx-auto max-w-4xl text-center">
+        <h2 class="font-serif text-3xl font-semibold tracking-tight text-ink md:text-5xl">Ready to reclaim your nights?</h2>
+        <p class="mt-5 text-lg leading-8 text-ink/70">Begin with a private consultation. Divya will personally assess your family's needs and recommend the right path to restorative sleep.</p>
+        <div class="mt-10 flex flex-col justify-center gap-4 sm:flex-row">
+          <a href="#consultation" class="rounded-full bg-moss px-8 py-4 font-semibold text-white shadow-luxury hover:bg-ink transition-colors">Apply for Concierge Care</a>
+          <a href="mailto:divya@calmandcourageoussleepers.com" class="rounded-full border border-moss/30 bg-white px-8 py-4 font-semibold text-moss hover:border-moss transition-colors">Email Divya Privately</a>
         </div>
-      </section>
+        <p class="mt-10 text-sm leading-6 text-ink/45">This service provides sleep education and coaching, not medical advice. Please consult your pediatrician for medical concerns, feeding issues, reflux, breathing concerns, or other health-related sleep disruptions.</p>
+      </div>
+    </section>
+  </main>
 
-      <section id="schedule" class="bg-white px-6 py-20">
-        <div class="mx-auto max-w-4xl">
-          <div class="text-center">
-            <p class="font-semibold text-moss">Schedule a Call</p>
-            <h2 class="mt-3 text-3xl font-bold tracking-tight md:text-4xl">Book your free discovery call.</h2>
-            <p class="mt-4 text-lg text-ink/70">Not sure which package is right for your family? Schedule a free 15-minute call with Divya to talk through your sleep challenges and find the best path forward.</p>
-          </div>
-          <div class="calendly-inline-widget mt-10" data-url="https://calendly.com/divyaadibhatla" style="min-width:320px;height:500px;"></div>
-        </div>
-      </section>
-
-      <section id="faq" class="bg-white px-6 py-20">
-        <div class="mx-auto max-w-4xl">
-          <p class="font-semibold text-moss">FAQ</p>
-          <h2 class="mt-3 text-3xl font-bold tracking-tight md:text-4xl">Common questions from parents.</h2>
-          <div class="mt-8 divide-y divide-moss/10 rounded-[2rem] border border-moss/10 bg-cream px-6">
-            {faqs.map(([question, answer]) => (
-              <details class="group py-5">
-                <summary class="cursor-pointer list-none font-semibold text-ink group-open:text-moss">{question}</summary>
-                <p class="mt-3 leading-7 text-ink/70">{answer}</p>
-              </details>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section class="px-6 py-20">
-        <div class="mx-auto max-w-4xl text-center">
-          <h2 class="text-3xl font-bold tracking-tight md:text-4xl">Ready for more peaceful nights?</h2>
-          <p class="mt-4 text-lg text-ink/70">Send a message to choose the right support option or book a package directly.</p>
-          <div class="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
-            <button onclick="Calendly.initPopupWidget({url: 'https://calendly.com/divyaadibhatla'})" class="rounded-full bg-moss px-7 py-3 font-semibold text-white shadow-soft hover:bg-ink">Book a Free Discovery Call</button>
-            <a href="mailto:divya@calmandcourageoussleepers.com" class="rounded-full border border-moss/25 bg-white px-7 py-3 font-semibold text-moss hover:border-moss">Email Divya</a>
-          </div>
-          <p class="mt-8 text-sm leading-6 text-ink/55">This service provides sleep education and coaching, not medical advice. Please consult your pediatrician for medical concerns, feeding issues, reflux, breathing concerns, or other health-related sleep disruptions.</p>
-        </div>
-      </section>
-    </main>
-
-    <footer class="border-t border-moss/10 bg-white px-6 py-8 text-center text-sm text-ink/60">
+  <footer class="border-t border-moss/10 bg-white px-6 py-10">
+    <div class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 text-sm text-ink/50 md:flex-row">
       <p>Copyright © 2025 Calm and Courageous Sleepers. All rights reserved.</p>
-    </footer>
-  </body>
-</html>
+      <div class="flex gap-6">
+        <a href="/in-home-pediatric-sleep-consultant-palo-alto" class="hover:text-moss transition-colors">Palo Alto</a>
+        <a href="/concierge-baby-sleep-specialist-atherton-ca" class="hover:text-moss transition-colors">Atherton</a>
+        <a href="/private-newborn-sleep-training-marin-county" class="hover:text-moss transition-colors">Marin County</a>
+        <a href="/luxury-in-home-overnight-sleep-coach-san-francisco" class="hover:text-moss transition-colors">San Francisco</a>
+      </div>
+    </div>
+  </footer>
+</Layout>

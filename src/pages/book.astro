@@ -1,0 +1,76 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const title = 'Book Your Session | Calm & Courageous Sleepers';
+const description = 'Schedule your Private Ask Me Anything Session with Divya. Pick a time that works for you.';
+const canonical = 'https://calmandcourageoussleepers.com/book';
+---
+
+<Layout title={title} description={description} canonical={canonical}>
+  <header class="sticky top-0 z-50 border-b border-moss/10 bg-cream/95 backdrop-blur-md">
+    <nav class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+      <a href="/" class="font-serif text-xl font-semibold tracking-tight text-moss">Calm & Courageous Sleepers</a>
+      <div class="hidden items-center gap-8 text-sm font-medium text-ink/80 md:flex">
+        <a href="/#services" class="hover:text-gold transition-colors">Concierge Services</a>
+        <a href="/#about" class="hover:text-gold transition-colors">About Divya</a>
+        <a href="/#faq" class="hover:text-gold transition-colors">FAQ</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="relative overflow-hidden px-6 py-16 md:py-24">
+      <div class="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top_left,#e8d5d0,transparent_30%),radial-gradient(circle_at_bottom_right,#dce9df,transparent_28%)]"></div>
+      <div class="mx-auto max-w-3xl">
+        <div class="text-center">
+          <p class="mb-4 inline-flex items-center gap-2 rounded-full bg-white/80 px-5 py-2.5 text-sm font-medium text-moss shadow-luxury">
+            <span class="h-2 w-2 rounded-full bg-gold"></span>
+            Step 1 of 2 — Choose Your Time
+          </p>
+          <h1 class="font-serif text-3xl font-semibold tracking-tight text-ink md:text-4xl">Book Your Private Ask Me Anything Session</h1>
+          <p class="mt-4 text-lg leading-8 text-ink/70">
+            Select a time below. After booking, you'll be directed to complete your $150 payment to confirm your session.
+          </p>
+        </div>
+
+        <!-- Calendly Inline Embed -->
+        <div class="mt-10 rounded-[2rem] bg-white/80 p-4 shadow-luxury ring-1 ring-moss/10 md:p-8">
+          <div class="calendly-inline-widget" data-url="https://calendly.com/divyaadibhatla" style="min-width:320px;height:700px;"></div>
+          <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+        </div>
+
+        <!-- What's Next -->
+        <div class="mt-8 grid gap-4 sm:grid-cols-3">
+          <div class="rounded-2xl bg-white/80 p-6 text-center ring-1 ring-moss/10">
+            <p class="font-serif text-xl font-semibold text-moss">1. Pick a Time</p>
+            <p class="mt-2 text-sm text-ink/50">Choose a slot that works for your schedule</p>
+          </div>
+          <div class="rounded-2xl bg-white/80 p-6 text-center ring-1 ring-moss/10">
+            <p class="font-serif text-xl font-semibold text-moss">2. Complete Payment</p>
+            <p class="mt-2 text-sm text-ink/50">Secure $150 payment via Helcim</p>
+          </div>
+          <div class="rounded-2xl bg-white/80 p-6 text-center ring-1 ring-moss/10">
+            <p class="font-serif text-xl font-semibold text-moss">3. Join the Call</p>
+            <p class="mt-2 text-sm text-ink/50">45-minute private video session with Divya</p>
+          </div>
+        </div>
+
+        <div class="mt-8 text-center">
+          <a href="/" class="text-sm font-medium text-ink/50 hover:text-moss transition-colors">← Back to home</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-moss/10 bg-white px-6 py-10">
+    <div class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 text-sm text-ink/50 md:flex-row">
+      <p>Copyright © 2025 Calm and Courageous Sleepers. All rights reserved.</p>
+      <div class="flex gap-6">
+        <a href="/in-home-pediatric-sleep-consultant-palo-alto" class="hover:text-moss transition-colors">Palo Alto</a>
+        <a href="/concierge-baby-sleep-specialist-atherton-ca" class="hover:text-moss transition-colors">Atherton</a>
+        <a href="/private-newborn-sleep-training-marin-county" class="hover:text-moss transition-colors">Marin County</a>
+        <a href="/luxury-in-home-overnight-sleep-coach-san-francisco" class="hover:text-moss transition-colors">San Francisco</a>
+      </div>
+    </div>
+  </footer>
+</Layout>

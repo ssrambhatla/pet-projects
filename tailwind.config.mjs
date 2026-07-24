@@ -4,17 +4,21 @@ export default {
   theme: {
     extend: {
       colors: {
-        cream: '#fff8ef',
+        cream: '#faf7f2',
         sage: '#7f9f8a',
-        moss: '#426150',
-        blush: '#f2d8d5',
-        ink: '#243028',
+        moss: '#3d5147',
+        blush: '#e8d5d0',
+        ink: '#1a2420',
+        gold: '#c4a35a',
+        charcoal: '#2a2a2a',
       },
       fontFamily: {
         sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        serif: ['Cormorant Garamond', 'Georgia', 'serif'],
       },
       boxShadow: {
-        soft: '0 24px 80px rgba(66, 97, 80, 0.16)',
+        soft: '0 24px 80px rgba(61, 81, 71, 0.12)',
+        luxury: '0 16px 48px rgba(26, 36, 32, 0.08)',
       },
     },
   },
