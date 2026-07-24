@@ -1,12 +1,16 @@
 import type { APIRoute } from 'astro';
 
 const HELCIM_API_URL = 'https://api.helcim.com/v2/helcim-pay/initialize';
-const HELCIM_API_TOKEN = import.meta.env.HELICM_API_TOKEN || '';
+
+function getHelcimToken(): string {
+  return (globalThis as any).process?.env?.HELICM_API_TOKEN || import.meta.env.HELICM_API_TOKEN || '';
+}
 
 export const POST: APIRoute = async ({ request }) => {
   try {
     const body = await request.json();
     const { amount, currency = 'USD' } = body;
+    const HELCIM_API_TOKEN = getHelcimToken();
 
     if (!HELCIM_API_TOKEN) {
       return new Response(
