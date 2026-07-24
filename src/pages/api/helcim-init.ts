@@ -1,5 +1,13 @@
 import type { APIRoute } from 'astro';
 
+try {
+  // @ts-ignore
+  const { config } = await import('dotenv');
+  config();
+} catch {
+  // dotenv not available, rely on process.env / import.meta.env
+}
+
 const HELCIM_API_URL = 'https://api.helcim.com/v2/helcim-pay/initialize';
 
 function getHelcimToken(): string {
