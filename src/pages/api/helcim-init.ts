@@ -27,19 +27,19 @@ export const POST: APIRoute = async ({ request }) => {
       );
     }
 
+    const numericAmount = parseFloat(amount);
+
     const response = await fetch(HELCIM_API_URL, {
       method: 'POST',
       headers: {
+        'accept': 'application/json',
         'Content-Type': 'application/json',
         'api-token': HELCIM_API_TOKEN,
       },
       body: JSON.stringify({
         paymentType: 'purchase',
-        amount: amount,
+        amount: numericAmount,
         currency: currency,
-        paymentFees: false,
-        customerCode: '',
-        invoiceNumber: '',
       }),
     });
 
@@ -47,7 +47,7 @@ export const POST: APIRoute = async ({ request }) => {
 
     if (!response.ok) {
       return new Response(
-        JSON.stringify({ error: data.message || 'Helcim initialization failed' }),
+        JSON.stringify({ error: JSON.stringify(data) || 'Helcim initialization failed' }),
         { status: response.status, headers: { 'Content-Type': 'application/json' } }
       );
     }
