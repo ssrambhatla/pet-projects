@@ -4,7 +4,7 @@ import awsAmplify from 'astro-aws-amplify';
 
 export default defineConfig({
   site: 'https://calmandcourageoussleepers.com',
-  output: 'hybrid',
+  output: 'server',
   adapter: awsAmplify(),
   integrations: [tailwind()],
 });
