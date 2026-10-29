@@ -8,7 +8,7 @@ const description = 'Complete your payment with Divya.';
 const canonical = 'https://calmandcourageoussleepers.com/payment';
 
 const isVirtual = Astro.url.searchParams.has('virtual');
-const serviceName = isVirtual ? 'Virtual Sleep Concierge Program' : 'Private Ask Me Anything Session';
+const serviceName = isVirtual ? 'Virtual Sleep Consultation' : 'Private Ask Me Anything Session';
 const serviceDesc = isVirtual ? 'Data-driven remote sleep optimization program' : '45-minute private one-on-one call (virtual)';
 const amount = isVirtual ? '$575' : '$150';
 const amountDisplay = isVirtual ? '$575.00' : '$150.00';
