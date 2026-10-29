@@ -57,10 +57,14 @@ const services = [
 ];
 
 const faqs = [
-  ['What ages do you support?', 'I support families with infants and toddlers through every stage of sleep development — from newborn sleep shaping through toddler sleep transitions, regressions, and routine optimization.'],
-  ['How is your approach different from traditional sleep coaching?', 'My background in engineering informs a data-driven, systematic approach I call Sleep Architecture. Rather than vague coaching, I analyze your child\'s sleep patterns, environment variables, and developmental stage to build a precision-optimized sleep framework. Every recommendation is evidence-based and tracked against measurable outcomes.'],
+  ['Are you a certified pediatric sleep consultant?', 'Yes — I\'m a certified pediatric sleep consultant (CPSM) with an engineering background. My certification is grounded in evidence-based pediatric sleep science, and my engineering training is what makes my approach more analytical than a typical sleep coach.'],
+  ['How much does a sleep consultant cost?', 'Engagements range from a $150 one-time Private Ask Me Anything session, to $575 for the two-week Virtual Sleep Concierge Program, to $2,975+ for the Bespoke In-Home Sleep Residency. Every engagement begins with a private consultation so I can recommend the right level of support before you commit.'],
+  ['What is sleep training, and what methods do you use?', 'Sleep training is the process of teaching your baby or toddler independent, consolidated sleep through consistent routines and age-appropriate techniques. I don\'t prescribe a single method — approaches range from gentle, gradual methods to more structured ones. I assess your child\'s temperament, developmental stage, and your family\'s comfort level so you choose the approach you\'re confident executing consistently.'],
+  ['What ages do you support?', 'I support families with infants and toddlers through every stage of sleep development — from newborn sleep shaping through baby and toddler sleep training, regressions, and routine optimization.'],
+  ['How is your approach different from a traditional sleep consultant or sleep training program?', 'My background in engineering informs a data-driven, systematic approach I call Sleep Architecture. Rather than handing you a generic sleep training plan, I analyze your child\'s sleep patterns, environment variables, and developmental stage to build a precision-optimized sleep framework. Every recommendation is evidence-based and tracked against measurable outcomes.'],
+  ['What is the difference between a sleep consultant and a sleep concierge?', 'A traditional sleep consultant assesses your child\'s sleep and hands you a plan to implement yourself. As a sleep concierge, I go further — during the Bespoke In-Home Sleep Residency I personally execute the overnight plan in your home, handle night wakings, engineer the sleep environment, and train your household staff for a seamless handoff.'],
   ['Do you coordinate with our household staff (nanny, au pair, night nurse)?', 'Yes. A key part of the Bespoke In-Home Sleep Residency includes training and coordinating with your existing household staff to ensure seamless execution and consistency across all caregivers.'],
-  ['What areas do you serve for in-home support?', 'I provide in-home concierge service throughout the San Francisco Bay Area, including Atherton, Menlo Park, Palo Alto, Los Altos Hills, Hillsborough, Tiburon, Mill Valley, and Pacific Heights. Virtual consultations are available nationwide.'],
+  ['What areas do you serve for in-home support?', 'I provide in-home pediatric sleep consultant services throughout the San Francisco Bay Area, including Atherton, Menlo Park, Palo Alto, Los Altos Hills, Hillsborough, Tiburon, Mill Valley, and Pacific Heights. Virtual sleep consultations are available nationwide.'],
   ['Do you provide medical advice?', 'No. Sleep coaching is educational support and does not replace guidance from your pediatrician or medical provider. However, my approach is informed by clinical sleep science and I collaborate well alongside medical teams for children with reflux, special needs, or other medical considerations.'],
   ['How do we begin?', 'Every engagement begins with a private consultation to understand your family\'s unique needs, household dynamics, and sleep goals. This allows me to recommend the right tier of service and ensure we are the right fit before any commitment.'],
 ];
@@ -73,9 +77,22 @@ const steps = [
 ];
 
 const serviceAreas = ['Atherton', 'Menlo Park', 'Palo Alto', 'Los Altos Hills', 'Hillsborough', 'Tiburon', 'Mill Valley', 'Pacific Heights', 'San Francisco', 'Marin County'];
+
+const faqStructuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map(([question, answer]) => ({
+    '@type': 'Question',
+    name: question,
+    acceptedAnswer: { '@type': 'Answer', text: answer },
+  })),
+};
 ---
 
-<Layout>
+<Layout
+  title="Pediatric Sleep Consultant & Private Sleep Concierge in the Bay Area | Calm & Courageous Sleepers"
+  description="Divya Adibhattla is a certified pediatric sleep consultant (CPSM) in the San Francisco Bay Area. Virtual sleep consulting nationwide and in-home overnight sleep training in Palo Alto, Atherton, Menlo Park, Los Altos Hills, Marin and San Francisco."
+>
   <header class="sticky top-0 z-50 border-b border-moss/10 bg-cream/95 backdrop-blur-md">
     <nav class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
       <a href="#top" class="flex items-center gap-2">
@@ -97,14 +114,15 @@ const serviceAreas = ['Atherton', 'Menlo Park', 'Palo Alto', 'Los Altos Hills', 
         <div>
           <p class="mb-6 inline-flex items-center gap-2 rounded-full bg-white/80 px-5 py-2.5 text-sm font-medium text-moss shadow-luxury">
             <span class="h-2 w-2 rounded-full bg-gold"></span>
-            Private Pediatric Sleep Concierge — San Francisco Bay Area
+            Certified Pediatric Sleep Consultant — San Francisco Bay Area
           </p>
           <h1 class="max-w-3xl font-serif text-4xl font-semibold leading-[1.1] tracking-tight text-ink md:text-6xl">
-            Data-Driven Sleep Architecture for Discerning Families
+            Baby &amp; Toddler Sleep Consulting for San Francisco Bay Area Families — In-Home and Virtual
           </h1>
           <p class="mt-8 max-w-2xl text-lg leading-8 text-ink/70">
-            Complete elite overnight immersion where Divya personally handles the overnight execution, environment design, and biometric tracking — so you can finally sleep. Engineered for families who value precision, privacy, and total delegation.
+            Calm and Courageous Sleepers is a pediatric sleep consulting practice led by Divya Adibhattla, a certified pediatric sleep consultant (CPSM). Divya offers virtual sleep consulting across the US and Canada, and in-home overnight sleep training across the Bay Area, for babies and toddlers from newborn through age 5.
           </p>
+          <p class="mt-4 font-serif text-lg italic text-moss">Data-driven sleep architecture, delivered in your home or virtually.</p>
           <div class="mt-10 flex flex-col gap-4 sm:flex-row">
             <a href="#consultation" class="rounded-full bg-moss px-8 py-4 text-center font-semibold text-white shadow-luxury hover:bg-ink transition-colors">Apply for Concierge Care</a>
             <a href="#services" class="rounded-full border border-moss/30 bg-white/80 px-8 py-4 text-center font-semibold text-moss hover:border-moss transition-colors">View Concierge Services</a>
@@ -138,7 +156,7 @@ const serviceAreas = ['Atherton', 'Menlo Park', 'Palo Alto', 'Los Altos Hills', 
           <p class="text-sm font-semibold uppercase tracking-[0.2em] text-gold">About Divya</p>
           <h2 class="font-serif text-3xl font-semibold tracking-tight text-ink md:text-5xl">An Engineer's Approach to Pediatric Sleep</h2>
           <p>
-            I'm an engineer and a proud mother of two. That combination is not incidental — it's the foundation of my methodology. When I struggled with my own children's sleep, I didn't turn to vague coaching advice. I turned to data, developmental science, and systems thinking.
+            I'm a certified pediatric sleep consultant (CPSM), an engineer, and a proud mother of two. That combination is not incidental — it's the foundation of my methodology. When I struggled with my own children's sleep, I didn't turn to vague coaching advice. I turned to data, developmental science, and systems thinking.
           </p>
           <p>
             The result is what I call <strong class="text-moss">Sleep Architecture</strong>: a data-driven, algorithmic framework that treats pediatric sleep as an optimizable system. Every child's sleep is influenced by dozens of interconnected variables — circadian biology, feeding patterns, environmental conditions, developmental milestones, and household routines. I analyze each variable, identify the bottlenecks, and engineer a precision plan that produces measurable results.
@@ -162,7 +180,7 @@ const serviceAreas = ['Atherton', 'Menlo Park', 'Palo Alto', 'Los Altos Hills', 
           </div>
         </div>
         <div>
-          <img src="/Divya_Prof.jpeg" alt="Divya Adibhattla — Pediatric Sleep Concierge & Sleep Architecture Specialist" class="mx-auto rounded-[2rem] shadow-luxury ring-1 ring-moss/10 md:mx-0" width="360" height="360" />
+          <img src="/Divya_Prof.jpeg" alt="Divya Adibhattla — Certified Pediatric Sleep Consultant & Sleep Architecture Specialist" class="mx-auto rounded-[2rem] shadow-luxury ring-1 ring-moss/10 md:mx-0" width="360" height="360" />
         </div>
       </div>
     </section>
@@ -277,9 +295,9 @@ const serviceAreas = ['Atherton', 'Menlo Park', 'Palo Alto', 'Los Altos Hills', 
               <label for="service" class="block text-sm font-semibold text-ink">Service of Interest</label>
               <select id="service" name="service" class="mt-2 w-full rounded-xl border border-moss/20 bg-cream px-4 py-3 text-ink focus:border-moss focus:outline-none focus:ring-2 focus:ring-moss/20">
                 <option value="">Select a service...</option>
-                <option value="bespoke">The Bespoke In-Home Sleep Residency ($3,500–$5,000+)</option>
-                <option value="virtual">Virtual Sleep Architecture ($1,500)</option>
-                <option value="executive">Private Ask Me Anything Session ($750)</option>
+                <option value="bespoke">The Bespoke In-Home Sleep Residency ($2,975+)</option>
+                <option value="virtual">Virtual Sleep Concierge Program ($575)</option>
+                <option value="executive">Private Ask Me Anything Session ($150)</option>
                 <option value="unsure">Not sure yet — need guidance</option>
               </select>
             </div>
@@ -323,7 +341,7 @@ const serviceAreas = ['Atherton', 'Menlo Park', 'Palo Alto', 'Los Altos Hills', 
             <span class="rounded-full border border-moss/20 bg-white px-5 py-2 text-sm font-medium text-ink/70 shadow-luxury">{area}</span>
           ))}
         </div>
-        <p class="mt-8 text-sm leading-6 text-ink/50">Virtual consultations available nationwide. In-home concierge service available throughout the San Francisco Bay Area.</p>
+        <p class="mt-8 text-sm leading-6 text-ink/50">Virtual sleep consultations available nationwide. In-home pediatric sleep consultant services throughout the San Francisco Bay Area.</p>
       </div>
     </section>
 
@@ -341,6 +359,8 @@ const serviceAreas = ['Atherton', 'Menlo Park', 'Palo Alto', 'Los Altos Hills', 
     </section>
   </main>
 
+  <script type="application/ld+json" set:html={JSON.stringify(faqStructuredData)} />
+
   <footer class="border-t border-moss/10 bg-white px-6 py-10">
     <div class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 text-sm text-ink/50 md:flex-row">
       <p>Copyright © 2025 Calm and Courageous Sleepers. All rights reserved.</p>
@@ -349,6 +369,10 @@ const serviceAreas = ['Atherton', 'Menlo Park', 'Palo Alto', 'Los Altos Hills', 
         <a href="/concierge-baby-sleep-specialist-atherton-ca" class="hover:text-moss transition-colors">Atherton</a>
         <a href="/private-newborn-sleep-training-marin-county" class="hover:text-moss transition-colors">Marin County</a>
         <a href="/luxury-in-home-overnight-sleep-coach-san-francisco" class="hover:text-moss transition-colors">San Francisco</a>
+        <a href="https://www.bornbir.com/divya-adibhattla" target="_blank" rel="noopener" class="hover:text-moss transition-colors">Bornbir Reviews</a>
+        <a href="https://www.instagram.com/calm_and_courageous_sleepers" target="_blank" rel="noopener" aria-label="Instagram" class="hover:text-moss transition-colors">
+          <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        </a>
       </div>
     </div>
   </footer>
